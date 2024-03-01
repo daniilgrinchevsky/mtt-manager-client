@@ -1,13 +1,14 @@
 import React from 'react';
 
 import MyBreadCrumb from "../../../Common/MyBreadCrumb";
+import {PAGE} from "../../../config/page";
 
 
 const TouristsImport = () => {
 
   return (
     <React.Fragment>
-      <MyBreadCrumb title='Импорт туристов' parentTitle='Туристы' crumbTitle='Импорт туристов' />
+      <MyBreadCrumb title={PAGE.TOURIST_IMPORT.title} parentTitle='Туристы' />
       <div className="grid grid-cols-12 gap-x-5">
       </div>
     </React.Fragment>

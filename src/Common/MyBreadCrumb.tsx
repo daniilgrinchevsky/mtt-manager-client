@@ -1,14 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 interface MyBreadCrumbProps {
     title: string;
     parentTitle: string;
-    crumbTitle: string;
+    crumbTitle?: string;
 }
 const MyBreadCrumb = ({ title, parentTitle, crumbTitle }: MyBreadCrumbProps) => {
 
     document.title = `${title}`;
+
+    const cleanCrumbTitle = crumbTitle ? crumbTitle : title
 
     return (
         <React.Fragment>
@@ -21,7 +23,7 @@ const MyBreadCrumb = ({ title, parentTitle, crumbTitle }: MyBreadCrumbProps) => 
                         <Link to="#" className="text-slate-400 dark:text-zink-200">{parentTitle}</Link>
                     </li>
                     <li className="text-slate-700 dark:text-zink-100">
-                        {crumbTitle}
+                        {cleanCrumbTitle}
                     </li>
                 </ul>
             </div>

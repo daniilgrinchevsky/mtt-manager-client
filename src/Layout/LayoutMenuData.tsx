@@ -3,6 +3,7 @@ import {
     Blocks,
     CircuitBoard,
     Codesandbox,
+    Cog,
     FileText,
     LifeBuoy,
     LocateFixed,
@@ -19,6 +20,8 @@ import {
     UserRound,
     Users
 } from "lucide-react";
+import {ROUTES} from "../Common/constants/routes";
+import {PAGE} from "../config/page";
 
 const menuData: any = [
     {
@@ -27,167 +30,212 @@ const menuData: any = [
     },
     {
         id: "create",
-        label: 'Создать',
+        label: PAGE.CREATE.title,
         link: "/#",
         icon: <Plus />,
         subItems: [
             {
                 id: 'create-request',
-                label: 'Заявку',
-                link: '/create-request',
+                label: PAGE.CREATE_REQUEST.title,
+                link: ROUTES.CREATE_REQUEST,
                 parentId: 'create'
             },
             {
                 id: 'create-tourist',
-                label: 'Туриста',
-                link: '/create-tourist',
+                label: PAGE.CREATE_TOURIST.title,
+                link: ROUTES.CREATE_TOURIST,
                 parentId: "create"
             },
             {
                 id: 'create-task',
-                label: 'Задачу',
-                link: '/create-task',
+                label: PAGE.CREATE_TASK.title,
+                link: ROUTES.CREATE_TASK,
                 parentId: "create"
             },
         ]
     },
     {
-        id: "requests",
-        label: 'Заявки',
+        id: "request",
+        label: PAGE.REQUEST.title,
         link: "/#",
         icon: <FileText />,
         subItems: [
             {
                 id: 'request-list',
-                label: 'Список заявок',
-                link: '/request-list',
-                parentId: "requests"
+                label: PAGE.REQUEST_LIST.title,
+                link: ROUTES.REQUEST_LIST,
+                parentId: "request"
             },
             {
                 id: 'calendar',
-                label: 'Календарь',
-                link: '/calendar',
-                parentId: "requests"
+                label: PAGE.REQUEST_CALENDAR.title,
+                link: ROUTES.REQUEST_CALENDAR,
+                parentId: "request"
             },
             {
                 id: 'tasks',
-                label: 'Задачи',
-                link: '/tasks',
-                parentId: "requests"
+                label: PAGE.REQUEST_TASKS.title,
+                link: ROUTES.REQUEST_TASKS,
+                parentId: "request"
             },
             {
                 id: 'departure-schedule',
-                label: 'График выездов',
-                link: '/departure-schedule',
-                parentId: "requests"
+                label: PAGE.REQUEST_DEPARTURE_SCHEDULE.title,
+                link: ROUTES.REQUEST_DEPARTURE_SCHEDULE,
+                parentId: "request"
             },
             {
                 id: 'visa-schedule',
-                label: 'График виз',
-                link: '/visa-schedule',
-                parentId: "requests"
+                label: PAGE.REQUEST_VISA_SCHEDULE.title,
+                link: ROUTES.REQUEST_VISA_SCHEDULE,
+                parentId: "request"
             },
             {
                 id: 'insurance-schedule',
-                label: 'График страховок',
-                link: '/insurance-schedule',
-                parentId: "requests"
+                label: PAGE.REQUEST_INSURANCE_SCHEDULE.title,
+                link: ROUTES.REQUEST_INSURANCE_SCHEDULE,
+                parentId: "request"
             }
         ]
     },
     {
-        id: 'tourists',
-        label: 'Туристы',
+        id: 'tourist',
+        label: PAGE.TOURIST.title,
         link: "/#",
         icon: <TentTree />,
         subItems: [
             {
                 id: 'clients-tourists',
-                label: 'Заказчики / Туристы',
-                link: '/clients-tourists',
-                parentId: 'tourists'
+                label: PAGE.TOURIST_CLIENTS.title,
+                link: ROUTES.TOURIST_CLIENTS,
+                parentId: 'tourist'
             },
             {
                 id: 'tourists-import',
-                label: 'Импорт туристов',
-                link: '/tourists-import',
-                parentId: 'tourists'
+                label: PAGE.TOURIST_IMPORT.title,
+                link: ROUTES.TOURIST_IMPORT,
+                parentId: 'tourist'
             }
         ]
     },
     {
-        id: 'partners',
-        label: 'Партнеры',
+        id: 'partner',
+        label: PAGE.PARTNER.title,
         link: "/#",
         icon: <Users />,
         subItems: [
             {
                 id: 'partner-list',
-                label: 'Список партнеров',
-                link: '/partner-list',
-                parentId: 'partners'
+                label: PAGE.PARTNER_LIST.title,
+                link: ROUTES.PARTNER_LIST,
+                parentId: 'partner'
             },
             {
                 id: 'partner-types',
-                label: 'Типы партнеров',
-                link: '/partner-types',
-                parentId: 'partners'
+                label: PAGE.PARTNER_TYPES.title,
+                link: ROUTES.PARTNER_TYPES,
+                parentId: 'partner'
             },
             {
                 id: 'contact-departments',
-                label: 'Отделы контактных лиц',
-                link: '/contact-departments',
-                parentId: 'partners'
+                label: PAGE.PARTNER_CONTACT_DEPARTMENTS.title,
+                link: ROUTES.PARTNER_CONTACT_DEPARTMENTS,
+                parentId: 'partner'
             }
         ]
     },
     {
-        id: 'integrations',
-        label: 'Интеграции',
+        id: 'integration',
+        label: PAGE.INTEGRATION.title,
         link: "/#",
         icon: <Blocks />,
         subItems: [
             {
                 id: 'mail-boxes',
-                label: 'Почтовые ящики',
-                link: '/mail-boxes',
-                parentId: 'integrations'
+                label: PAGE.INTEGRATION_MAIL_BOXES.title,
+                link: ROUTES.INTEGRATION_MAIL_BOXES,
+                parentId: 'integration'
             },
             {
                 id: 'social-media',
-                label: 'Мессенджеры и соцсети',
-                link: '/social-media',
-                parentId: 'integrations',
+                label: PAGE.INTEGRATION_SOCIAL_MEDIA.title,
+                link: ROUTES.INTEGRATION_SOCIAL_MEDIA,
+                parentId: 'integration',
             },
             {
                 id: 'online-chat',
-                label: 'Онлайн-чат',
-                link: '/online-chat',
-                parentId: 'integrations',
+                label: PAGE.INTEGRATION_ONLINE_CHAT.title,
+                link: ROUTES.INTEGRATION_ONLINE_CHAT,
+                parentId: 'integration',
             },
             {
                 id: 'online-payments',
-                label: 'Онлайн-кассы и оплата',
-                link: '/online-payments',
-                parentId: 'integrations'
+                label: PAGE.INTEGRATION_ONLINE_PAYMENTS.title,
+                link: ROUTES.INTEGRATION_ONLINE_PAYMENTS,
+                parentId: 'integration'
             },
             {
                 id: 'online-document-sign',
-                label: 'Онлайн-подпись документов',
-                link: '/online-document-sign',
-                parentId: 'integrations',
+                label: PAGE.INTEGRATION_ONLINE_DOCUMENT_SIGN.title,
+                link: ROUTES.INTEGRATION_ONLINE_DOCUMENT_SIGN,
+                parentId: 'integration',
             },
             {
                 id: 'sms-email',
-                label: 'СМС / Email',
-                link: '/sms-email',
-                parentId: 'integrations',
+                label: PAGE.INTEGRATION_SMS_EMAIL.title,
+                link: ROUTES.INTEGRATION_SMS_EMAIL,
+                parentId: 'integration',
             },
             {
                 id: 'ip-telephony',
-                label: 'IP-телефония',
-                link: '/ip-telephony',
-                parentId: 'integrations',
+                label: PAGE.INTEGRATION_IP_TELEPHONY.title,
+                link: ROUTES.INTEGRATION_IP_TELEPHONY,
+                parentId: 'integration',
+            },
+
+        ]
+    },
+    {
+        id: 'setting',
+        label: PAGE.SETTING.title,
+        link: "/",
+        icon: <Cog />,
+        subItems: [
+            {
+                id: 'my-company',
+                label: PAGE.SETTING_MY_COMPANY.title,
+                link: ROUTES.SETTING_MY_COMPANY,
+                parentId: 'setting'
+            },
+            {
+                id: 'staff',
+                label: PAGE.SETTING_STAFF.title,
+                link: ROUTES.SETTING_STAFF,
+                parentId: 'setting'
+            },
+            {
+                id: 'permissions',
+                label: PAGE.SETTING_PERMISSIONS.title,
+                link: ROUTES.SETTING_PERMISSIONS,
+                parentId: 'setting'
+            },
+            {
+                id: 'document-templates',
+                label: PAGE.SETTING_DOCUMENT_TEMPLATES.title,
+                link: ROUTES.SETTING_DOCUMENT_TEMPLATES,
+                parentId: 'setting'
+            },
+            {
+                id: 'system',
+                label: PAGE.SETTING_SYSTEM.title,
+                link: ROUTES.SETTING_SYSTEM,
+                parentId: 'setting'
+            },
+            {
+                id: 'currencies',
+                label: PAGE.SETTING_CURRENCIES.title,
+                link: ROUTES.SETTING_CURRENCIES,
+                parentId: 'setting'
             },
 
         ]

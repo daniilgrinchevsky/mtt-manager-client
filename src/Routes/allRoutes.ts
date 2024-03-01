@@ -212,6 +212,13 @@ import OnlinePayments from "../pages/Integrations/OnlinePayments";
 import OnlineDocumentSign from "../pages/Integrations/OnlineDocumentSign";
 import SmsEmail from "../pages/Integrations/SmsEmail";
 import IpTelephony from "../pages/Integrations/IpTelephony";
+import MyCompany from "../pages/Settings/MyCompany";
+import Staff from "../pages/Settings/Staff";
+import Permissions from "../pages/Settings/Permissions";
+import DocumentTemplates from "../pages/Settings/DocumentTemplates";
+import System from "../pages/Settings/System";
+import Currencies from "../pages/Settings/Currencies";
+import {PAGE} from "../config/page";
 
 interface RouteObject {
   path: string;
@@ -222,35 +229,44 @@ interface RouteObject {
 const authProtectedRoutes: Array<RouteObject> = [
 
   // Create
-  { path: "/create-request", component: Request },
-  { path: "/create-tourist", component:  Tourist },
-  { path: "/create-task", component: Task },
+  { path: PAGE.CREATE_REQUEST.path, component: Request },
+  { path: PAGE.CREATE_TOURIST.path, component:  Tourist },
+  { path: PAGE.CREATE_TASK.path, component: Task },
 
   // Requests
-  { path: "/request-list", component: RequestList },
-  { path: "/calendar", component: Calendar },
-  { path: "/tasks", component: Tasks },
-  { path: "/departure-schedule", component: DepartureSchedule },
-  { path: "/visa-schedule", component: VisaSchedule },
-  { path: "/insurance-schedule", component: InsuranceSchedule },
+  { path: PAGE.REQUEST_LIST.path, component: RequestList },
+  { path: PAGE.REQUEST_CALENDAR.path, component: Calendar },
+  { path: PAGE.REQUEST_TASKS.path, component: Tasks },
+  { path: PAGE.REQUEST_DEPARTURE_SCHEDULE.path, component: DepartureSchedule },
+  { path: PAGE.REQUEST_VISA_SCHEDULE.path, component: VisaSchedule },
+  { path: PAGE.REQUEST_INSURANCE_SCHEDULE.path, component: InsuranceSchedule },
 
   //Tourists
-  { path: '/clients-tourists', component: ClientsTourists },
-  { path: '/tourists-import', component: TouristsImport },
+  { path: PAGE.TOURIST_CLIENTS.path, component: ClientsTourists },
+  { path: PAGE.TOURIST_IMPORT.path, component: TouristsImport },
 
   //Partners
-  { path: '/partner-list', component: PartnerList },
-  { path: '/partner-types', component: PartnerTypes },
-  { path: '/contact-departments', component: ContactDepartments },
+  { path: PAGE.PARTNER_LIST.path, component: PartnerList },
+  { path: PAGE.PARTNER_TYPES.path, component: PartnerTypes },
+  { path: PAGE.PARTNER_CONTACT_DEPARTMENTS.path, component: ContactDepartments },
 
     //Integrations
-  { path: '/mail-boxes', component: MailBoxes },
-  { path: '/social-media', component: SocialMedia },
-  { path: '/online-chat', component: OnlineChat },
-  { path: '/online-payments', component: OnlinePayments },
-  { path: '/online-document-sign', component: OnlineDocumentSign },
-  { path: '/sms-email', component: SmsEmail },
-  { path: '/ip-telephony', component: IpTelephony },
+  { path: PAGE.INTEGRATION_MAIL_BOXES.path, component: MailBoxes },
+  { path: PAGE.INTEGRATION_SOCIAL_MEDIA.path, component: SocialMedia },
+  { path: PAGE.INTEGRATION_ONLINE_CHAT.path, component: OnlineChat },
+  { path: PAGE.INTEGRATION_ONLINE_PAYMENTS.path, component: OnlinePayments },
+  { path: PAGE.INTEGRATION_ONLINE_DOCUMENT_SIGN.path, component: OnlineDocumentSign },
+  { path: PAGE.INTEGRATION_SMS_EMAIL.path, component: SmsEmail },
+  { path: PAGE.INTEGRATION_IP_TELEPHONY.path, component: IpTelephony },
+
+    //Settings
+  { path: PAGE.SETTING_MY_COMPANY.path, component: MyCompany},
+  { path: PAGE.SETTING_STAFF.path, component: Staff},
+  { path: PAGE.SETTING_PERMISSIONS.path, component: Permissions},
+  { path: PAGE.SETTING_DOCUMENT_TEMPLATES.path, component: DocumentTemplates},
+  { path: PAGE.SETTING_SYSTEM.path, component: System},
+  { path: PAGE.SETTING_CURRENCIES.path, component: Currencies},
+
 
 
 

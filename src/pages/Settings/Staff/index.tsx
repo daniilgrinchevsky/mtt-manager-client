@@ -4,15 +4,15 @@ import MyBreadCrumb from "../../../Common/MyBreadCrumb";
 import {PAGE} from "../../../config/page";
 
 
-const RequestList = () => {
+const Staff = () => {
 
   return (
     <React.Fragment>
-      <MyBreadCrumb title={PAGE.REQUEST_LIST.title} parentTitle='Заявки' crumbTitle='Список заявок' />
+      <MyBreadCrumb title={PAGE.SETTING_STAFF.title} parentTitle='Настройки' />
       <div className="grid grid-cols-12 gap-x-5">
       </div>
     </React.Fragment>
   );
 };
 
-export default RequestList;
+export default Staff;
