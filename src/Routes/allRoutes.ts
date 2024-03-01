@@ -1,8 +1,5 @@
 // dashboard
-import Analytics from "pages/Dashboards/Analytics";
 import Ecommerce from "pages/Dashboards/Ecommerce";
-import Email from "pages/Dashboards/Email";
-import HRDashboard from "pages/Dashboards/HR";
 
 // Chat
 import Chat from "pages/Chat";
@@ -194,7 +191,6 @@ import Settings from "pages/Pages/Settings";
 import Pricing from "pages/Pages/Pricing";
 import Faqs from "pages/Pages/Faqs";
 import ContactUs from "pages/Pages/ContactUs";
-import CreateRequest from "../pages/Create/Request";
 import Request from "../pages/Create/Request";
 import Tourist from "../pages/Create/Tourist";
 import Task from "../pages/Create/Task";
@@ -204,6 +200,8 @@ import Tasks from "../pages/Requests/Tasks";
 import DepartureSchedule from "../pages/Requests/DepartureSchedule";
 import VisaSchedule from "../pages/Requests/VisaSchedule";
 import InsuranceSchedule from "../pages/Requests/InsuranceSchedule";
+import ClientsTourists from "../pages/Tourists/ClientsTourists";
+import TouristsImport from "../pages/Tourists/TouristsImport";
 
 interface RouteObject {
   path: string;
@@ -225,6 +223,10 @@ const authProtectedRoutes: Array<RouteObject> = [
   { path: "/departure-schedule", component: DepartureSchedule },
   { path: "/visa-schedule", component: VisaSchedule },
   { path: "/insurance-schedule", component: InsuranceSchedule },
+
+  //Tourists
+  { path: '/clients-tourists', component: ClientsTourists },
+  { path: '/tourists-import', component: TouristsImport },
 
 
 

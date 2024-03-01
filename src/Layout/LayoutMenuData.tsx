@@ -1,17 +1,12 @@
 import {
     Award,
-    CalendarDays,
     CircuitBoard,
     Codesandbox,
     FileText,
     LifeBuoy,
     LocateFixed,
-    Mail,
     Map,
-    MessageSquare,
-    MonitorDot,
     PackagePlus,
-    PictureInPicture2,
     PieChart,
     Plus,
     RadioTower,
@@ -20,7 +15,8 @@ import {
     ShoppingBag,
     Table,
     Trophy,
-    UserRound
+    UserRound,
+    Users
 } from "lucide-react";
 
 const menuData: any = [
@@ -99,46 +95,22 @@ const menuData: any = [
         ]
     },
     {
-        label: 'Apps',
-        isTitle: true,
-    },
-    {
-        id: 'chat',
-        label: 'Chat',
-        icon: <MessageSquare />,
-        link: '/apps-chat',
-        parentId: 2
-    },
-    {
-        id: 'email',
-        label: 'Email',
-        icon: <Mail />,
-        link: '/apps-mailbox',
-        parentId: 2
-    },
-    {
-        id: 'calendar',
-        label: 'Calendar',
+        id: 'tourists',
+        label: 'Туристы',
         link: "/#",
-        icon: <CalendarDays />,
+        icon: <Users />,
         subItems: [
             {
-                id: 'default',
-                label: 'Default',
-                link: '/apps-calendar',
-                parentId: 'calendar'
+                id: 'clients-tourists',
+                label: 'Заказчики / Туристы',
+                link: '/clients-tourists',
+                parentId: 'tourists'
             },
             {
-                id: 'monthgrid',
-                label: 'Month Grid',
-                link: '/apps-calendar-month-grid',
-                parentId: 'calendar'
-            },
-            {
-                id: 'multimonth',
-                label: 'Multi Month Stack',
-                link: '/apps-calendar-multi-month-stack',
-                parentId: 'calendar'
+                id: 'tourists-import',
+                label: 'Импорт туристов',
+                link: '/tourists-import',
+                parentId: 'tourists'
             }
         ]
     },
