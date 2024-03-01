@@ -55,22 +55,46 @@ const menuData: any = [
         ]
     },
     {
-        id: "landing",
-        label: 'Landing Page',
+        id: "requests",
+        label: 'Заявки',
         link: "/#",
-        icon: <PictureInPicture2 />,
+        icon: <FileText />,
         subItems: [
             {
-                id: 'onepage',
-                label: 'One Page',
-                link: '/onepage-landing',
-                parentId: "landing"
+                id: 'request-list',
+                label: 'Список заявок',
+                link: '/request-list',
+                parentId: "requests"
             },
             {
-                id: 'productlanding',
-                label: 'Product',
-                link: '/product-landing',
-                parentId: "landing"
+                id: 'calendar',
+                label: 'Календарь',
+                link: '/calendar',
+                parentId: "requests"
+            },
+            {
+                id: 'tasks',
+                label: 'Задачи',
+                link: '/tasks',
+                parentId: "requests"
+            },
+            {
+                id: 'departure-schedule',
+                label: 'График выездов',
+                link: '/departure-schedule',
+                parentId: "requests"
+            },
+            {
+                id: 'visa-schedule',
+                label: 'График виз',
+                link: '/visa-schedule',
+                parentId: "requests"
+            },
+            {
+                id: 'insurance-schedule',
+                label: 'График страховок',
+                link: '/insurance-schedule',
+                parentId: "requests"
             }
         ]
     },

@@ -198,6 +198,12 @@ import CreateRequest from "../pages/Create/Request";
 import Request from "../pages/Create/Request";
 import Tourist from "../pages/Create/Tourist";
 import Task from "../pages/Create/Task";
+import RequestList from "../pages/Requests/RequestList";
+import Calendar from "../pages/Requests/Calendar";
+import Tasks from "../pages/Requests/Tasks";
+import DepartureSchedule from "../pages/Requests/DepartureSchedule";
+import VisaSchedule from "../pages/Requests/VisaSchedule";
+import InsuranceSchedule from "../pages/Requests/InsuranceSchedule";
 
 interface RouteObject {
   path: string;
@@ -206,12 +212,26 @@ interface RouteObject {
 }
 
 const authProtectedRoutes: Array<RouteObject> = [
-  // Создать
-  { path: "/", component: Ecommerce },
-  { path: "/dashboard", component: Ecommerce },
+
+  // Create
   { path: "/create-request", component: Request },
   { path: "/create-tourist", component:  Tourist },
   { path: "/create-task", component: Task },
+
+  // Requests
+  { path: "/request-list", component: RequestList },
+  { path: "/calendar", component: Calendar },
+  { path: "/tasks", component: Tasks },
+  { path: "/departure-schedule", component: DepartureSchedule },
+  { path: "/visa-schedule", component: VisaSchedule },
+  { path: "/insurance-schedule", component: InsuranceSchedule },
+
+
+
+
+
+  { path: "/", component: Ecommerce },
+  { path: "/dashboard", component: Ecommerce },
 
   // Ui Element
   { path: "/ui-alerts", component: UiAlert },

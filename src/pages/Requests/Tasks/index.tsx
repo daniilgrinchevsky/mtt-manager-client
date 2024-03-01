@@ -3,15 +3,15 @@ import React from 'react';
 import MyBreadCrumb from "../../../Common/MyBreadCrumb";
 
 
-const Task = () => {
+const Tasks = () => {
 
   return (
     <React.Fragment>
-      <MyBreadCrumb title='Создание задачи' parentTitle='Создать' crumbTitle='Задачу' />
+      <MyBreadCrumb title='Задачи' parentTitle='Заявки' crumbTitle='Задачи' />
       <div className="grid grid-cols-12 gap-x-5">
       </div>
     </React.Fragment>
   );
 };
 
-export default Task;
+export default Tasks;

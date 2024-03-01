@@ -7,7 +7,7 @@ const Request = () => {
 
   return (
     <React.Fragment>
-      <MyBreadCrumb title='Создание туриста' pageTitle='Создать' crumbTitle='Туриста' />
+      <MyBreadCrumb title='Создание туриста' parentTitle='Создать' crumbTitle='Туриста' />
       <div className="grid grid-cols-12 gap-x-5">
       </div>
     </React.Fragment>

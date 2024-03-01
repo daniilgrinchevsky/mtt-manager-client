@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 interface MyBreadCrumbProps {
     title: string;
-    pageTitle: string;
+    parentTitle: string;
     crumbTitle: string;
 }
-const MyBreadCrumb = ({ title, pageTitle, crumbTitle }: MyBreadCrumbProps) => {
+const MyBreadCrumb = ({ title, parentTitle, crumbTitle }: MyBreadCrumbProps) => {
 
     document.title = `${title}`;
 
@@ -18,7 +18,7 @@ const MyBreadCrumb = ({ title, pageTitle, crumbTitle }: MyBreadCrumbProps) => {
                 </div>
                 <ul className="flex items-center gap-2 text-sm font-normal shrink-0">
                     <li className="relative before:content-['\ea54'] before:font-remix ltr:before:-right-1 rtl:before:-left-1  before:absolute before:text-[18px] before:-top-[3px] ltr:pr-4 rtl:pl-4 before:text-slate-400 dark:text-zink-200">
-                        <Link to="#" className="text-slate-400 dark:text-zink-200">{pageTitle}</Link>
+                        <Link to="#" className="text-slate-400 dark:text-zink-200">{parentTitle}</Link>
                     </li>
                     <li className="text-slate-700 dark:text-zink-100">
                         {crumbTitle}
