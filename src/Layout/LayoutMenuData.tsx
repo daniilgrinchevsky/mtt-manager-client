@@ -1,4 +1,27 @@
-import { Award, CalendarDays, CircuitBoard, Codesandbox, FileText, LifeBuoy, LocateFixed, Mail, Map, MessageSquare, MonitorDot, PackagePlus, PictureInPicture2, PieChart, RadioTower, ScrollText, Share2, ShoppingBag, Table, Trophy, UserRound } from "lucide-react";
+import {
+    Award,
+    CalendarDays,
+    CircuitBoard,
+    Codesandbox,
+    FileText,
+    LifeBuoy,
+    LocateFixed,
+    Mail,
+    Map,
+    MessageSquare,
+    MonitorDot,
+    PackagePlus,
+    PictureInPicture2,
+    PieChart,
+    Plus,
+    RadioTower,
+    ScrollText,
+    Share2,
+    ShoppingBag,
+    Table,
+    Trophy,
+    UserRound
+} from "lucide-react";
 
 const menuData: any = [
     {
@@ -6,40 +29,28 @@ const menuData: any = [
         isTitle: true,
     },
     {
-        id: "dashboard",
-        label: 'Dashboards',
+        id: "create",
+        label: 'Создать',
         link: "/#",
-        icon: <MonitorDot />,
+        icon: <Plus />,
         subItems: [
             {
-                id: 'analyticsdashboard',
-                label: 'Analytics',
-                link: '/dashboards-analytics',
-                parentId: "dashboard"
+                id: 'create-request',
+                label: 'Заявку',
+                link: '/create-request',
+                parentId: 'create'
             },
             {
-                id: 'ecommercedashboard',
-                label: 'Ecommerce',
-                link: '/dashboard',
-                parentId: "dashboard"
+                id: 'create-tourist',
+                label: 'Туриста',
+                link: '/create-tourist',
+                parentId: "create"
             },
             {
-                id: 'emaildashboard',
-                label: 'Email',
-                link: '/dashboards-email',
-                parentId: "dashboard"
-            },
-            {
-                id: 'hrdashboard',
-                label: 'HR',
-                link: '/dashboards-hr',
-                parentId: "dashboard"
-            },
-            {
-                id: 'socialdashboard',
-                label: 'Social',
-                link: '/dashboards-social',
-                parentId: "dashboard"
+                id: 'create-task',
+                label: 'Задачу',
+                link: '/create-task',
+                parentId: "create"
             },
         ]
     },

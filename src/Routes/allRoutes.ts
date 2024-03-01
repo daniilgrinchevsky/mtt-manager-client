@@ -3,7 +3,6 @@ import Analytics from "pages/Dashboards/Analytics";
 import Ecommerce from "pages/Dashboards/Ecommerce";
 import Email from "pages/Dashboards/Email";
 import HRDashboard from "pages/Dashboards/HR";
-import SocialMediaDashboard from "pages/Dashboards/SocialMedia";
 
 // Chat
 import Chat from "pages/Chat";
@@ -195,6 +194,10 @@ import Settings from "pages/Pages/Settings";
 import Pricing from "pages/Pages/Pricing";
 import Faqs from "pages/Pages/Faqs";
 import ContactUs from "pages/Pages/ContactUs";
+import CreateRequest from "../pages/Create/Request";
+import Request from "../pages/Create/Request";
+import Tourist from "../pages/Create/Tourist";
+import Task from "../pages/Create/Task";
 
 interface RouteObject {
   path: string;
@@ -203,13 +206,12 @@ interface RouteObject {
 }
 
 const authProtectedRoutes: Array<RouteObject> = [
-  // Dashboard
+  // Создать
   { path: "/", component: Ecommerce },
   { path: "/dashboard", component: Ecommerce },
-  { path: "/dashboards-analytics", component: Analytics },
-  { path: "/dashboards-email", component: Email },
-  { path: "/dashboards-hr", component: HRDashboard },
-  { path: "/dashboards-social", component: SocialMediaDashboard },
+  { path: "/create-request", component: Request },
+  { path: "/create-tourist", component:  Tourist },
+  { path: "/create-task", component: Task },
 
   // Ui Element
   { path: "/ui-alerts", component: UiAlert },
