@@ -1,5 +1,6 @@
 import {
     Award,
+    Blocks,
     CircuitBoard,
     Codesandbox,
     FileText,
@@ -138,6 +139,57 @@ const menuData: any = [
                 link: '/contact-departments',
                 parentId: 'partners'
             }
+        ]
+    },
+    {
+        id: 'integrations',
+        label: 'Интеграции',
+        link: "/#",
+        icon: <Blocks />,
+        subItems: [
+            {
+                id: 'mail-boxes',
+                label: 'Почтовые ящики',
+                link: '/mail-boxes',
+                parentId: 'integrations'
+            },
+            {
+                id: 'social-media',
+                label: 'Мессенджеры и соцсети',
+                link: '/social-media',
+                parentId: 'integrations',
+            },
+            {
+                id: 'online-chat',
+                label: 'Онлайн-чат',
+                link: '/online-chat',
+                parentId: 'integrations',
+            },
+            {
+                id: 'online-payments',
+                label: 'Онлайн-кассы и оплата',
+                link: '/online-payments',
+                parentId: 'integrations'
+            },
+            {
+                id: 'online-document-sign',
+                label: 'Онлайн-подпись документов',
+                link: '/online-document-sign',
+                parentId: 'integrations',
+            },
+            {
+                id: 'sms-email',
+                label: 'СМС / Email',
+                link: '/sms-email',
+                parentId: 'integrations',
+            },
+            {
+                id: 'ip-telephony',
+                label: 'IP-телефония',
+                link: '/ip-telephony',
+                parentId: 'integrations',
+            },
+
         ]
     },
     {

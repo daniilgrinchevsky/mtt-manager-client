@@ -205,6 +205,13 @@ import TouristsImport from "../pages/Tourists/TouristsImport";
 import PartnerList from "../pages/Partners/PartnerList";
 import PartnerTypes from "../pages/Partners/PartnerTypes";
 import ContactDepartments from "../pages/Partners/ContactDepartments";
+import MailBoxes from "../pages/Integrations/MailBoxes";
+import SocialMedia from "../pages/Integrations/SocialMedia";
+import OnlineChat from "../pages/Integrations/OnlineChat";
+import OnlinePayments from "../pages/Integrations/OnlinePayments";
+import OnlineDocumentSign from "../pages/Integrations/OnlineDocumentSign";
+import SmsEmail from "../pages/Integrations/SmsEmail";
+import IpTelephony from "../pages/Integrations/IpTelephony";
 
 interface RouteObject {
   path: string;
@@ -236,6 +243,14 @@ const authProtectedRoutes: Array<RouteObject> = [
   { path: '/partner-types', component: PartnerTypes },
   { path: '/contact-departments', component: ContactDepartments },
 
+    //Integrations
+  { path: '/mail-boxes', component: MailBoxes },
+  { path: '/social-media', component: SocialMedia },
+  { path: '/online-chat', component: OnlineChat },
+  { path: '/online-payments', component: OnlinePayments },
+  { path: '/online-document-sign', component: OnlineDocumentSign },
+  { path: '/sms-email', component: SmsEmail },
+  { path: '/ip-telephony', component: IpTelephony },
 
 
 
