@@ -12,8 +12,8 @@ import {
     RadioTower,
     ScrollText,
     Share2,
-    ShoppingBag,
     Table,
+    TentTree,
     Trophy,
     UserRound,
     Users
@@ -98,7 +98,7 @@ const menuData: any = [
         id: 'tourists',
         label: 'Туристы',
         link: "/#",
-        icon: <Users />,
+        icon: <TentTree />,
         subItems: [
             {
                 id: 'clients-tourists',
@@ -115,72 +115,29 @@ const menuData: any = [
         ]
     },
     {
-        id: "ecommerce",
-        label: 'Ecommerce',
+        id: 'partners',
+        label: 'Партнеры',
         link: "/#",
-        icon: <ShoppingBag />,
+        icon: <Users />,
         subItems: [
             {
-                id: 'product',
-                label: 'Products',
-                parentId: 'ecommerce',
-                subItems: [
-                    {
-                        id: 'listview',
-                        label: 'List View',
-                        link: '/apps-ecommerce-product-list',
-                        parentId: 'product'
-                    },
-                    {
-                        id: 'gridview',
-                        label: 'Grid View',
-                        link: '/apps-ecommerce-product-grid',
-                        parentId: 'product'
-                    },
-                    {
-                        id: 'overview',
-                        label: 'Overview',
-                        link: '/apps-ecommerce-product-overview',
-                        parentId: 'product'
-                    },
-                    {
-                        id: 'addnew',
-                        label: 'Add New',
-                        link: '/apps-ecommerce-product-create',
-                        parentId: 'product'
-                    },
-                ]
+                id: 'partner-list',
+                label: 'Список партнеров',
+                link: '/partner-list',
+                parentId: 'partners'
             },
             {
-                id: 'shoppingcart',
-                label: 'Shopping Cart',
-                link: '/apps-ecommerce-cart',
-                parentId: 'ecommerce'
+                id: 'partner-types',
+                label: 'Типы партнеров',
+                link: '/partner-types',
+                parentId: 'partners'
             },
             {
-                id: 'checkout',
-                label: 'Checkout',
-                link: '/apps-ecommerce-checkout',
-                parentId: 'ecommerce'
-            },
-            {
-                id: 'order',
-                label: 'Orders',
-                link: '/apps-ecommerce-orders',
-                parentId: 'ecommerce'
-            },
-            {
-                id: 'orderoverview',
-                label: 'Order Overview',
-                link: '/apps-ecommerce-order-overview',
-                parentId: 'ecommerce'
-            },
-            {
-                id: 'sellers',
-                label: 'Sellers',
-                link: '/apps-ecommerce-sellers',
-                parentId: 'ecommerce'
-            },
+                id: 'contact-departments',
+                label: 'Отделы контактных лиц',
+                link: '/contact-departments',
+                parentId: 'partners'
+            }
         ]
     },
     {

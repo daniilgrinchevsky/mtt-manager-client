@@ -202,6 +202,9 @@ import VisaSchedule from "../pages/Requests/VisaSchedule";
 import InsuranceSchedule from "../pages/Requests/InsuranceSchedule";
 import ClientsTourists from "../pages/Tourists/ClientsTourists";
 import TouristsImport from "../pages/Tourists/TouristsImport";
+import PartnerList from "../pages/Partners/PartnerList";
+import PartnerTypes from "../pages/Partners/PartnerTypes";
+import ContactDepartments from "../pages/Partners/ContactDepartments";
 
 interface RouteObject {
   path: string;
@@ -228,6 +231,10 @@ const authProtectedRoutes: Array<RouteObject> = [
   { path: '/clients-tourists', component: ClientsTourists },
   { path: '/tourists-import', component: TouristsImport },
 
+  //Partners
+  { path: '/partner-list', component: PartnerList },
+  { path: '/partner-types', component: PartnerTypes },
+  { path: '/contact-departments', component: ContactDepartments },
 
 
 
