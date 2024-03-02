@@ -8,6 +8,7 @@ import {
     LifeBuoy,
     LocateFixed,
     Map,
+    MoreVertical,
     PackagePlus,
     PieChart,
     Plus,
@@ -20,7 +21,6 @@ import {
     UserRound,
     Users
 } from "lucide-react";
-import {ROUTES} from "../Common/constants/routes";
 import {PAGE} from "../config/page";
 
 const menuData: any = [
@@ -37,19 +37,19 @@ const menuData: any = [
             {
                 id: 'create-request',
                 label: PAGE.CREATE_REQUEST.title,
-                link: ROUTES.CREATE_REQUEST,
+                link: PAGE.CREATE_REQUEST.path,
                 parentId: 'create'
             },
             {
                 id: 'create-tourist',
                 label: PAGE.CREATE_TOURIST.title,
-                link: ROUTES.CREATE_TOURIST,
+                link: PAGE.CREATE_TOURIST.path,
                 parentId: "create"
             },
             {
                 id: 'create-task',
                 label: PAGE.CREATE_TASK.title,
-                link: ROUTES.CREATE_TASK,
+                link: PAGE.CREATE_TASK.path,
                 parentId: "create"
             },
         ]
@@ -63,37 +63,37 @@ const menuData: any = [
             {
                 id: 'request-list',
                 label: PAGE.REQUEST_LIST.title,
-                link: ROUTES.REQUEST_LIST,
+                link: PAGE.REQUEST_LIST.path,
                 parentId: "request"
             },
             {
                 id: 'calendar',
                 label: PAGE.REQUEST_CALENDAR.title,
-                link: ROUTES.REQUEST_CALENDAR,
+                link: PAGE.REQUEST_CALENDAR.path,
                 parentId: "request"
             },
             {
                 id: 'tasks',
                 label: PAGE.REQUEST_TASKS.title,
-                link: ROUTES.REQUEST_TASKS,
+                link: PAGE.REQUEST_TASKS.path,
                 parentId: "request"
             },
             {
                 id: 'departure-schedule',
                 label: PAGE.REQUEST_DEPARTURE_SCHEDULE.title,
-                link: ROUTES.REQUEST_DEPARTURE_SCHEDULE,
+                link: PAGE.REQUEST_DEPARTURE_SCHEDULE.path,
                 parentId: "request"
             },
             {
                 id: 'visa-schedule',
                 label: PAGE.REQUEST_VISA_SCHEDULE.title,
-                link: ROUTES.REQUEST_VISA_SCHEDULE,
+                link: PAGE.REQUEST_VISA_SCHEDULE.path,
                 parentId: "request"
             },
             {
                 id: 'insurance-schedule',
                 label: PAGE.REQUEST_INSURANCE_SCHEDULE.title,
-                link: ROUTES.REQUEST_INSURANCE_SCHEDULE,
+                link: PAGE.REQUEST_INSURANCE_SCHEDULE.path,
                 parentId: "request"
             }
         ]
@@ -107,13 +107,13 @@ const menuData: any = [
             {
                 id: 'clients-tourists',
                 label: PAGE.TOURIST_CLIENTS.title,
-                link: ROUTES.TOURIST_CLIENTS,
+                link: PAGE.TOURIST_CLIENTS.path,
                 parentId: 'tourist'
             },
             {
                 id: 'tourists-import',
                 label: PAGE.TOURIST_IMPORT.title,
-                link: ROUTES.TOURIST_IMPORT,
+                link: PAGE.TOURIST_IMPORT.path,
                 parentId: 'tourist'
             }
         ]
@@ -127,19 +127,19 @@ const menuData: any = [
             {
                 id: 'partner-list',
                 label: PAGE.PARTNER_LIST.title,
-                link: ROUTES.PARTNER_LIST,
+                link: PAGE.PARTNER_LIST.path,
                 parentId: 'partner'
             },
             {
                 id: 'partner-types',
                 label: PAGE.PARTNER_TYPES.title,
-                link: ROUTES.PARTNER_TYPES,
+                link: PAGE.PARTNER_TYPES.path,
                 parentId: 'partner'
             },
             {
                 id: 'contact-departments',
                 label: PAGE.PARTNER_CONTACT_DEPARTMENTS.title,
-                link: ROUTES.PARTNER_CONTACT_DEPARTMENTS,
+                link: PAGE.PARTNER_CONTACT_DEPARTMENTS.path,
                 parentId: 'partner'
             }
         ]
@@ -153,43 +153,43 @@ const menuData: any = [
             {
                 id: 'mail-boxes',
                 label: PAGE.INTEGRATION_MAIL_BOXES.title,
-                link: ROUTES.INTEGRATION_MAIL_BOXES,
+                link: PAGE.INTEGRATION_MAIL_BOXES.path,
                 parentId: 'integration'
             },
             {
                 id: 'social-media',
                 label: PAGE.INTEGRATION_SOCIAL_MEDIA.title,
-                link: ROUTES.INTEGRATION_SOCIAL_MEDIA,
+                link: PAGE.INTEGRATION_SOCIAL_MEDIA.path,
                 parentId: 'integration',
             },
             {
                 id: 'online-chat',
                 label: PAGE.INTEGRATION_ONLINE_CHAT.title,
-                link: ROUTES.INTEGRATION_ONLINE_CHAT,
+                link: PAGE.INTEGRATION_ONLINE_CHAT.path,
                 parentId: 'integration',
             },
             {
                 id: 'online-payments',
                 label: PAGE.INTEGRATION_ONLINE_PAYMENTS.title,
-                link: ROUTES.INTEGRATION_ONLINE_PAYMENTS,
+                link: PAGE.INTEGRATION_ONLINE_PAYMENTS.path,
                 parentId: 'integration'
             },
             {
                 id: 'online-document-sign',
                 label: PAGE.INTEGRATION_ONLINE_DOCUMENT_SIGN.title,
-                link: ROUTES.INTEGRATION_ONLINE_DOCUMENT_SIGN,
+                link: PAGE.INTEGRATION_ONLINE_DOCUMENT_SIGN.path,
                 parentId: 'integration',
             },
             {
                 id: 'sms-email',
                 label: PAGE.INTEGRATION_SMS_EMAIL.title,
-                link: ROUTES.INTEGRATION_SMS_EMAIL,
+                link: PAGE.INTEGRATION_SMS_EMAIL.path,
                 parentId: 'integration',
             },
             {
                 id: 'ip-telephony',
                 label: PAGE.INTEGRATION_IP_TELEPHONY.title,
-                link: ROUTES.INTEGRATION_IP_TELEPHONY,
+                link: PAGE.INTEGRATION_IP_TELEPHONY.path,
                 parentId: 'integration',
             },
 
@@ -204,40 +204,78 @@ const menuData: any = [
             {
                 id: 'my-company',
                 label: PAGE.SETTING_MY_COMPANY.title,
-                link: ROUTES.SETTING_MY_COMPANY,
+                link: PAGE.SETTING_MY_COMPANY.path,
                 parentId: 'setting'
             },
             {
                 id: 'staff',
                 label: PAGE.SETTING_STAFF.title,
-                link: ROUTES.SETTING_STAFF,
+                link: PAGE.SETTING_STAFF.path,
                 parentId: 'setting'
             },
             {
                 id: 'permissions',
                 label: PAGE.SETTING_PERMISSIONS.title,
-                link: ROUTES.SETTING_PERMISSIONS,
+                link: PAGE.SETTING_PERMISSIONS.path,
                 parentId: 'setting'
             },
             {
                 id: 'document-templates',
                 label: PAGE.SETTING_DOCUMENT_TEMPLATES.title,
-                link: ROUTES.SETTING_DOCUMENT_TEMPLATES,
+                link: PAGE.SETTING_DOCUMENT_TEMPLATES.path,
                 parentId: 'setting'
             },
             {
                 id: 'system',
                 label: PAGE.SETTING_SYSTEM.title,
-                link: ROUTES.SETTING_SYSTEM,
+                link: PAGE.SETTING_SYSTEM.path,
                 parentId: 'setting'
             },
             {
                 id: 'currencies',
                 label: PAGE.SETTING_CURRENCIES.title,
-                link: ROUTES.SETTING_CURRENCIES,
+                link: PAGE.SETTING_CURRENCIES.path,
                 parentId: 'setting'
             },
 
+        ]
+    },
+    {
+        id: 'other',
+        label: PAGE.OTHER.title,
+        link: "/",
+        icon: <MoreVertical />,
+        subItems: [
+            {
+                id: 'handbook',
+                label: PAGE.OTHER_HANDBOOK.title,
+                link: PAGE.OTHER_HANDBOOK.path,
+                parentId: 'other'
+            },
+            {
+                id: 'bonus',
+                label: PAGE.OTHER_BONUS.title,
+                link: PAGE.OTHER_BONUS.path,
+                parentId: 'other'
+            },
+            {
+                id: 'finance',
+                label: PAGE.OTHER_FINANCE.title,
+                link: PAGE.OTHER_FINANCE.path,
+                parentId: 'other'
+            },
+            {
+                id: 'statistics',
+                label: PAGE.OTHER_STATISTICS.title,
+                link: PAGE.OTHER_STATISTICS.path,
+                parentId: 'other'
+            },
+            {
+                id: 'mailing',
+                label: PAGE.OTHER_MAILING.title,
+                link: PAGE.OTHER_MAILING.path,
+                parentId: 'other'
+            },
         ]
     },
     {

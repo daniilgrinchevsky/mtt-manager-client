@@ -43,6 +43,14 @@ class PAGE implements Enum {
     static readonly SETTING_SYSTEM = new PAGE('/setting/system','Система')
     static readonly SETTING_CURRENCIES = new PAGE('/setting/currencies','Валюты')
 
+    static readonly OTHER = new PAGE('', 'Еще')
+    static readonly OTHER_HANDBOOK = new PAGE('/other/handbook', 'Справочники')
+    static readonly OTHER_BONUS = new PAGE('/other/bonus', 'Бонусы')
+    static readonly OTHER_FINANCE = new PAGE('/other/finance', 'Финансы')
+    static readonly OTHER_STATISTICS = new PAGE('/other/statistics', 'Статистика')
+    static readonly OTHER_MAILING = new PAGE('/other/mailing', 'Рассылки')
+
+
     private constructor(public readonly path: string, public readonly title: string) {}
 }
 

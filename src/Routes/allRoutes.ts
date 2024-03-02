@@ -219,6 +219,11 @@ import DocumentTemplates from "../pages/Settings/DocumentTemplates";
 import System from "../pages/Settings/System";
 import Currencies from "../pages/Settings/Currencies";
 import {PAGE} from "../config/page";
+import Handbook from "../pages/Other/Handbook";
+import Bonus from "../pages/Other/Bonus";
+import Finance from "../pages/Other/Finance";
+import Statistics from "../pages/Other/Statistics";
+import Mailing from "../pages/Other/Mailing";
 
 interface RouteObject {
   path: string;
@@ -266,6 +271,13 @@ const authProtectedRoutes: Array<RouteObject> = [
   { path: PAGE.SETTING_DOCUMENT_TEMPLATES.path, component: DocumentTemplates},
   { path: PAGE.SETTING_SYSTEM.path, component: System},
   { path: PAGE.SETTING_CURRENCIES.path, component: Currencies},
+
+    //Other
+  { path: PAGE.OTHER_HANDBOOK.path, component: Handbook },
+  { path: PAGE.OTHER_BONUS.path, component: Bonus },
+  { path: PAGE.OTHER_FINANCE.path, component: Finance },
+  { path: PAGE.OTHER_STATISTICS.path, component: Statistics },
+  { path: PAGE.OTHER_MAILING.path, component: Mailing },
 
 
 
