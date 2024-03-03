@@ -1,6 +1,15 @@
-import React, { useState, createContext, useContext, ReactNode, ElementType, useRef, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
-import { Transition } from '@headlessui/react';
+import React, {
+  createContext,
+  ElementType,
+  ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
+import {Link} from 'react-router-dom';
+import {Transition} from '@headlessui/react';
 
 interface DropdownContextType {
   open: boolean;
@@ -25,22 +34,22 @@ const Dropdown = ({ as: Component = 'div', children, className }: DropdownProps)
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        if (open && toggleOpen) {
-          toggleOpen();
-        }
-      }
-    };
+    // const handleOutsideClick = (event: MouseEvent) => {
+    //   if (
+    //     dropdownRef.current &&
+    //     !dropdownRef.current.contains(event.target as Node)
+    //   ) {
+    //     if (open && toggleOpen) {
+    //       toggleOpen();
+    //     }
+    //   }
+    // };
+    //
+    // document.addEventListener('click', handleOutsideClick);
 
-    document.addEventListener('click', handleOutsideClick);
-
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-    };
+    // return () => {
+    //   document.removeEventListener('click', handleOutsideClick);
+    // };
   }, [open, toggleOpen]); // Include toggleOpen as a dependency
 
   return (
@@ -166,7 +175,7 @@ const Content: React.FC<ContentProps> = ({ as: Component = 'div', className, chi
       {(status: any) => (
         <Component
           ref={dropdownElementRef}
-          onClick={() => setOpen(false)}
+          // onClick={() => setOpen(false)}
           className={`${getClassName} ${status === 'entered' ? 'transition-all' : ''}`}
           style={getDropdownStyle()}
         >
