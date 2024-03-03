@@ -50,7 +50,8 @@ const menuData: any = [
                 id: 'create-task',
                 label: PAGE.CREATE_TASK.title,
                 link: PAGE.CREATE_TASK.path,
-                parentId: "create"
+                parentId: "create",
+                isModal: true
             },
         ]
     },

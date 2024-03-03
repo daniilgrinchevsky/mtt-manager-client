@@ -1,6 +1,6 @@
-import React, { ElementType } from 'react';
-import { useModalContext } from './ModalContext';
-import { X } from 'lucide-react';
+import React, {ElementType} from 'react';
+import {useModalContext} from './ModalContext';
+import {X} from 'lucide-react';
 
 interface ModalHeaderProps {
     children: React.ReactNode;
@@ -18,11 +18,12 @@ const ModalHeader = ({ children, className, closeButtonClass, as: Component = "d
         <Component
             {...props}
             className={className ? className : ''}
-            onClick={onHide ? onHide : handleModalToggle}
+
         >
             {children}
             <button data-modal-close="closeModal"
                 className={closeButtonClass ? closeButtonClass : ''}
+                    onClick={onHide ? onHide : handleModalToggle}
             >
                 <X className='lucide lucide-x size-5'></X>
             </button>
