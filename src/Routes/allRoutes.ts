@@ -282,7 +282,7 @@ const authProtectedRoutes: Array<RouteObject> = [
 
 
 
-  // { path: "/", component: Ecommerce },
+  { path: "/", component: Ecommerce },
   { path: "/dashboard", component: Ecommerce },
 
   // Ui Element
