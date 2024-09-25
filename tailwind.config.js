@@ -216,6 +216,8 @@ module.exports = {
                     900: "#070C12",
                     950: "#030507"
                 },
+                lime: colors.lime,
+                amber: colors.amber,
 
             },
             spacing: {

@@ -1,8 +1,7 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
-import {authProtectedRoutes, publicRoutes} from './allRoutes';
+import {authProtectedRoutes} from './allRoutes';
 import Layout from 'Layout';
-import NonAuthLayout from "Layout/NonLayout"
 import AuthProtected from './AuthProtected';
 
 const RouteIndex = () => {
@@ -22,16 +21,16 @@ const RouteIndex = () => {
             }
           />
         ))}
-        {publicRoutes.map((route: any, idx: number) => (
-          <Route
-            path={route.path}
-            key={idx}
-            element={
-              <NonAuthLayout>
-                <route.component />
-              </NonAuthLayout>
-            } />
-        ))}
+        {/*{publicRoutes.map((route: any, idx: number) => (*/}
+        {/*  <Route*/}
+        {/*    path={route.path}*/}
+        {/*    key={idx}*/}
+        {/*    element={*/}
+        {/*      <NonAuthLayout>*/}
+        {/*        <route.component />*/}
+        {/*      </NonAuthLayout>*/}
+        {/*    } />*/}
+        {/*))}*/}
       </Routes>
     </React.Fragment>
   );

@@ -1,21 +1,21 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, {Fragment, useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 import {
-  Column,
-  Table as ReactTable,
-  ColumnFiltersState,
-  FilterFn,
-  useReactTable,
-  getCoreRowModel,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  flexRender
+    Column,
+    ColumnFiltersState,
+    FilterFn,
+    flexRender,
+    getCoreRowModel,
+    getFilteredRowModel,
+    getPaginationRowModel,
+    getSortedRowModel,
+    Table as ReactTable,
+    useReactTable
 } from '@tanstack/react-table';
 
-import { rankItem } from '@tanstack/match-sorter-utils';
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {rankItem} from '@tanstack/match-sorter-utils';
+import {ChevronLeft, ChevronRight} from "lucide-react";
 
 // Column Filter
 const Filter = ({
@@ -165,9 +165,9 @@ const TableContainer = ({
         {
           isSelect &&
           <div className="self-center col-span-12 lg:col-span-6">
-            <label>Show
+            <label>Show &nbsp;
               <select name="basic_tables_length" aria-controls="basic_tables"
-                className="px-3 py-2 form-select border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200 inline-block w-auto"
+                className="px-3 w-14 py-2 form-select border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-700 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200 inline-block"
                 onClick={(event: any) => setPageSize(event.target.value)}>
                 <option value="10">10</option>
                 <option value="25">25</option>
@@ -273,7 +273,7 @@ const TableContainer = ({
           <div className={PaginationClassName}>
             <div className="mb-4 grow md:mb-0">
               <div className="text-slate-500 dark:text-zink-200">Showing
-                <b> {getState().pagination.pageSize}</b> of
+                <b> {getState().pagination.pageSize > data.length ? data.length : getState().pagination.pageSize}</b> of
                 <b> {data.length}</b> Results</div>
             </div>
             <ul className="flex flex-wrap items-center gap-2 shrink-0">

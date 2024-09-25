@@ -17,10 +17,23 @@ File: tailwind scss File
 @import "plugins/select";
 @import "plugins/multi-select";
 
+@import 'flatpickr/dist/flatpickr.min.css';
 
 
 .group\/menu-link:hover,
 .animate {
    animation-iteration-count: 2;
    stroke-dasharray: 10;
+}
+
+@layer components {
+   .modal-open {
+      overflow: inherit;
+   }
+}
+
+@layer utilities {
+   .no-scroll::-webkit-scrollbar {
+      display: none; /* for Chrome, Safari and Opera */
+   }
 }

@@ -13,14 +13,15 @@ interface ModalProps {
     placement?: string;
     dialogClassName?: string;
     closeFlag?: boolean;
+    closeOnClickOutside?: boolean;
 }
 
-const Modal = ({ show, onHide, children, className, placement, id, dialogClassName, as: Component = "div", ...props }: ModalProps) => {
+const Modal = ({ show, onHide, children, className, placement, id, dialogClassName, closeOnClickOutside, as: Component = "div", ...props }: ModalProps) => {
 
     return (
 
         <React.Fragment>
-            <div {...props} id={id ? id : "defaultModal"} className={`${className} ${!show ? "show hidden" : ""}`}>
+            <div {...props} id={id ? id : "defaultModal"} data-modal-backdrop="static" className={`${className} ${!show ? "show hidden" : ""}`}>
                 <ModalContextProvider show={show} onHide={onHide}>
                     <Component
                         className={dialogClassName ? dialogClassName : ''}
@@ -32,7 +33,7 @@ const Modal = ({ show, onHide, children, className, placement, id, dialogClassNa
             <div onClick={onHide}
                  className={`fixed inset-0 bg-slate-900/40 dark:bg-zink-800/70 z-[1049] backdrop-overlay ${!show ? "hidden" : ""}`}
                  id="backDropDiv"
-
+                 style={ closeOnClickOutside ? {} : {pointerEvents: "none", position: "fixed"}}
             ></div>
         </React.Fragment>
     );

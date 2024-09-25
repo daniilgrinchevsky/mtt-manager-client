@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { Provider } from "react-redux";
+import {Provider} from "react-redux";
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import { configureStore } from '@reduxjs/toolkit';
+import {BrowserRouter} from 'react-router-dom';
+import {configureStore} from '@reduxjs/toolkit';
 import rootReducer from './slices';
 
 const root = ReactDOM.createRoot(
@@ -12,6 +12,7 @@ const root = ReactDOM.createRoot(
 );
 const store = configureStore({ reducer: rootReducer, devTools: true });
 root.render(
+
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>

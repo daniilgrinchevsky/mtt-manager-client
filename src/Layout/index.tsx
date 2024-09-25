@@ -1,8 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Sidebar from './VerticalLayout/Sidebar';
-import Header from './Header';
-import Footer from './Footer';
-import RightSidebar from './RightSidebar';
 import {createSelector} from '@reduxjs/toolkit';
 import {useDispatch, useSelector} from 'react-redux';
 import {Settings} from 'lucide-react';
@@ -18,6 +14,7 @@ import {
     changeNavigation,
     changeSkin
 } from "../slices/thunk";
+import NavbarButton from "../pages/Components/Navigation/Navbars/NavbarButton";
 
 const Layout = ({ children }: any) => {
 
@@ -27,9 +24,6 @@ const Layout = ({ children }: any) => {
   const handleToggleDrawer = () => {
     setIsOpen(!isOpen);
   };
-
-  const [show, setShow] = React.useState<boolean>(false);
-  const handleDrawer = () => setShow(!show);
 
   const selectLayoutState = (state: any) => state.Layout;
   const selectLayoutProperties = createSelector(
@@ -55,7 +49,6 @@ const Layout = ({ children }: any) => {
     layoutModeType,
     layoutDirectionType,
     layoutContentWidthType,
-    layoutSidebarSizeType,
     layoutNavigationType,
     layoutSidebarColorType,
     layoutTopbarColorType
@@ -103,8 +96,10 @@ const Layout = ({ children }: any) => {
 
   useEffect(() => {
     document.documentElement.classList.add("scroll-smooth", "group");
+    document.documentElement.classList.add("no-scroll")
     document.body.classList.add('text-base', 'bg-body-bg', 'text-body', 'font-public', 'dark:text-zink-100', 'dark:bg-zink-800', 'group-data-[skin=bordered]:bg-body-bordered', 'group-data-[skin=bordered]:dark:bg-zink-700');
-    return () => {
+    document.body.classList.remove('overflow-hidden')
+      return () => {
       document.documentElement.classList.remove("scroll-smooth", "group");
       document.body.classList.remove('text-base', 'bg-body-bg', 'text-body', 'font-public', 'dark:text-zink-100', 'dark:bg-zink-800', 'group-data-[skin=bordered]:bg-body-bordered', 'group-data-[skin=bordered]:dark:bg-zink-700');
     };
@@ -113,15 +108,16 @@ const Layout = ({ children }: any) => {
   return (
     <>
       <div className="group-data-[sidebar-size=sm]:min-h-sm group-data-[sidebar-size=sm]:relative">
-        <Sidebar layoutType={layoutType} layoutSidebarSizeType={layoutSidebarSizeType} />
-        <Header handleToggleDrawer={handleToggleDrawer} handleDrawer={handleDrawer} />
+        {/*<Sidebar layoutType={layoutType} layoutSidebarSizeType={layoutSidebarSizeType} />*/}
+        {/*<Header handleToggleDrawer={handleToggleDrawer} handleDrawer={handleDrawer} />*/}
+          <NavbarButton />
         <div className='relative min-h-screen group-data-[sidebar-size=sm]:min-h-sm'>
-          <div className="group-data-[sidebar-size=lg]:ltr:md:ml-vertical-menu group-data-[sidebar-size=lg]:rtl:md:mr-vertical-menu group-data-[sidebar-size=md]:ltr:ml-vertical-menu-md group-data-[sidebar-size=md]:rtl:mr-vertical-menu-md group-data-[sidebar-size=sm]:ltr:ml-vertical-menu-sm group-data-[sidebar-size=sm]:rtl:mr-vertical-menu-sm pt-[calc(theme('spacing.header')_*_1)] pb-[calc(theme('spacing.header')_*_0.8)] px-4 group-data-[navbar=bordered]:pt-[calc(theme('spacing.header')_*_1.3)] group-data-[navbar=hidden]:pt-0 group-data-[layout=horizontal]:mx-auto group-data-[layout=horizontal]:max-w-screen-2xl group-data-[layout=horizontal]:px-0 group-data-[layout=horizontal]:group-data-[sidebar-size=lg]:ltr:md:ml-auto group-data-[layout=horizontal]:group-data-[sidebar-size=lg]:rtl:md:mr-auto group-data-[layout=horizontal]:md:pt-[calc(theme('spacing.header')_*_1.8)] group-data-[layout=horizontal]:px-3 group-data-[layout=horizontal]:group-data-[navbar=hidden]:pt-[calc(theme('spacing.header')_*_0.9)]">
-            <div className='container-fluid group-data-[content=boxed]:max-w-boxed mx-auto'>
+          {/*<div className="group-data-[sidebar-size=lg]:ltr:md:ml-vertical-menu group-data-[sidebar-size=lg]:rtl:md:mr-vertical-menu group-data-[sidebar-size=md]:ltr:ml-vertical-menu-md group-data-[sidebar-size=md]:rtl:mr-vertical-menu-md group-data-[sidebar-size=sm]:ltr:ml-vertical-menu-sm group-data-[sidebar-size=sm]:rtl:mr-vertical-menu-sm pt-[calc(theme('spacing.header')_*_1)] pb-[calc(theme('spacing.header')_*_0.8)] px-4 group-data-[navbar=bordered]:pt-[calc(theme('spacing.header')_*_1.3)] group-data-[navbar=hidden]:pt-0 group-data-[layout=horizontal]:mx-auto group-data-[layout=horizontal]:max-w-screen-2xl group-data-[layout=horizontal]:px-0 group-data-[layout=horizontal]:group-data-[sidebar-size=lg]:ltr:md:ml-auto group-data-[layout=horizontal]:group-data-[sidebar-size=lg]:rtl:md:mr-auto group-data-[layout=horizontal]:md:pt-[calc(theme('spacing.header')_*_1.8)] group-data-[layout=horizontal]:px-3 group-data-[layout=horizontal]:group-data-[navbar=hidden]:pt-[calc(theme('spacing.header')_*_0.9)]">*/}
+            <div className='container-fluid group-data-[content=boxed]:max-w-boxed mx-auto ms-5 me-5'>
               {children}
             </div>
-          </div>
-          <Footer />
+          {/*</div>*/}
+          {/*<Footer />*/}
         </div>
       </div>
       {layoutNavigationType === "hidden" && <div className="fixed items-center bottom-6 right-12 h-header group-data-[navbar=hidden]:flex">
@@ -129,7 +125,7 @@ const Layout = ({ children }: any) => {
           <Settings className="inline-block size-5" />
         </button>
       </div>}
-      <RightSidebar isOpen={isOpen} handleToggleDrawer={handleToggleDrawer} />
+      {/*<RightSidebar isOpen={isOpen} handleToggleDrawer={handleToggleDrawer} />*/}
       {/*<CartDrawer show={show} handleDrawer={handleDrawer} />*/}
 
     </>

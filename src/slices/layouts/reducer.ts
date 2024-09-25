@@ -1,16 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 //constants
 import {
-  LAYOUT_TYPES,
-  LAYOUT_SEMI_DARK,
-  LAYOUT_SKIN,
-  LAYOUT_MODE_TYPES,
-  LAYOUT_DIRECTION,
-  LAYOUT_CONTENT_WIDTH,
-  LEFT_SIDEBAR_SIZE_TYPES,
-  LEFT_NAVIGATION_TYPES,
-  LEFT_SIDEBAR_COLOR_TYPES,
-  LAYOUT_TOPBAR_THEME_TYPES
+    LAYOUT_CONTENT_WIDTH,
+    LAYOUT_DIRECTION,
+    LAYOUT_MODE_TYPES,
+    LAYOUT_SEMI_DARK,
+    LAYOUT_SKIN,
+    LAYOUT_TOPBAR_THEME_TYPES,
+    LAYOUT_TYPES,
+    LEFT_NAVIGATION_TYPES,
+    LEFT_SIDEBAR_COLOR_TYPES,
+    LEFT_SIDEBAR_SIZE_TYPES
 } from "Common/constants/layout";
 
 export interface LayoutState {
@@ -27,7 +27,7 @@ export interface LayoutState {
 }
 
 export const initialState: LayoutState = {
-  layoutType: LAYOUT_TYPES.VERTICAL,
+  layoutType: LAYOUT_TYPES.HORIZONTAL,
   layoutSemiDarkType: LAYOUT_SEMI_DARK.LIGHT,
   layoutSkintype: LAYOUT_SKIN.DEFAULT,
   layoutModeType: LAYOUT_MODE_TYPES.LIGHTMODE,

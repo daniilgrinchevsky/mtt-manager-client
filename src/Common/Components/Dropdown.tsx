@@ -1,12 +1,12 @@
 import React, {
-  createContext,
-  ElementType,
-  ReactNode,
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState
+    createContext,
+    ElementType,
+    ReactNode,
+    useCallback,
+    useContext,
+    useEffect,
+    useRef,
+    useState
 } from 'react';
 import {Link} from 'react-router-dom';
 import {Transition} from '@headlessui/react';
@@ -34,22 +34,22 @@ const Dropdown = ({ as: Component = 'div', children, className }: DropdownProps)
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // const handleOutsideClick = (event: MouseEvent) => {
-    //   if (
-    //     dropdownRef.current &&
-    //     !dropdownRef.current.contains(event.target as Node)
-    //   ) {
-    //     if (open && toggleOpen) {
-    //       toggleOpen();
-    //     }
-    //   }
-    // };
-    //
-    // document.addEventListener('click', handleOutsideClick);
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        if (open && toggleOpen) {
+          toggleOpen();
+        }
+      }
+    };
 
-    // return () => {
-    //   document.removeEventListener('click', handleOutsideClick);
-    // };
+    document.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
   }, [open, toggleOpen]); // Include toggleOpen as a dependency
 
   return (
@@ -175,7 +175,7 @@ const Content: React.FC<ContentProps> = ({ as: Component = 'div', className, chi
       {(status: any) => (
         <Component
           ref={dropdownElementRef}
-          // onClick={() => setOpen(false)}
+          onClick={() => setOpen(false)}
           className={`${getClassName} ${status === 'entered' ? 'transition-all' : ''}`}
           style={getDropdownStyle()}
         >
@@ -191,7 +191,7 @@ const Content: React.FC<ContentProps> = ({ as: Component = 'div', className, chi
 //   children: ReactNode;
 //   [key: string]: any; // To accept other props for Link
 // }
-//
+
 // const DropdownLink: React.FC<DropdownLinkProps> = ({ className = '', children, ...props }) => {
 //   return (
 //     <Link
