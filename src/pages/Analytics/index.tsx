@@ -6,6 +6,7 @@ import ggLogo from "assets/images/analytics/ggpoker.png"
 import betOnlineLogo from "assets/images/analytics/betonline.png"
 import usdtLogo from "assets/images/analytics/usdt.png"
 import tinkoffLogo from "assets/images/analytics/tinkoff.png"
+import coinPokerLogo from "assets/images/analytics/coin_poker.png"
 import AccountCard from "./AccountCard";
 import TransferModal from "./TransferModal";
 import axios from "axios";
@@ -103,6 +104,7 @@ const Analytics = () => {
     const [redStarBalance, setRedStarBalance] = useState("");
     const [redStarUsdBalance, setRedStarUsdBalance] = useState("");
     const [ggUsdBalance, setGgUsdBalance] = useState("");
+    const [coinPokerUsdBalance, setCoinPokerUsdBalance] = useState("");
     const [betOnlineUsdBalance, setBetOnlineUsdBalance] = useState("");
     const [usdtBalance, setUsdtBalance] = useState("")
     const [bankAccountBalance, setBankAccountBalance] = useState("");
@@ -158,6 +160,7 @@ const Analytics = () => {
                 setRedStarBalance(response.data.redStar)
                 setRedStarUsdBalance(response.data.redStarUsd)
                 setGgUsdBalance(response.data.gg)
+                setCoinPokerUsdBalance(response.data.coinPokerUsd)
                 setBetOnlineUsdBalance(response.data.betOnline)
                 setUsdtBalance(response.data.usdt)
                 setBankAccountBalance(response.data.bankAccount)
@@ -211,11 +214,9 @@ const Analytics = () => {
     return (
         <React.Fragment>
             <div className="grid grid-cols-12 grid-flow-row auto-rows-min gap-x-3 mt-5">
-                <AccountCard mainBalance={redStarBalance} secondBalance={redStarUsdBalance}
-                             currency="€" logo={redStarLogo}/>
+                <AccountCard mainBalance={redStarBalance} secondBalance={redStarUsdBalance} currency="€" logo={redStarLogo}/>
+                <AccountCard mainBalance={coinPokerUsdBalance} currency="$" logo={coinPokerLogo}/>
                 <AccountCard mainBalance={pokerKingUsdBalance} logo={pokerKingLogo} currency="$"/>
-                <AccountCard mainBalance={ggUsdBalance} logo={ggLogo} currency="$"/>
-
                 <div className="card col-span-6 row-span-3 mb-3">
                     <div className="card-body">
                         <div>
@@ -282,37 +283,36 @@ const Analytics = () => {
                         </div>
                     </div>
                 </div>
-
+                <AccountCard mainBalance={betOnlineUsdBalance} logo={betOnlineLogo} currency="$"/>
                 <AccountCard mainBalance={pokerDomBalance} secondBalance={pokerDomUsdBalance}
                              currency="₽" logo={pokerdomLogo}/>
-                <AccountCard mainBalance={betOnlineUsdBalance} logo={betOnlineLogo} currency="$"/>
-                <AccountCard mainBalance={usdtBalance} logo={usdtLogo} currency="$"/>
+
+                <AccountCard mainBalance={ggUsdBalance} logo={ggLogo} currency="$"/>
                 <AccountCard mainBalance={bankAccountBalance}
                              secondBalance={bankAccountUsdBalance} currency="₽" logo={tinkoffLogo}/>
-
-                <div className="card mb-3 col-span-4">
-                    <div className="card-body h-full flex space-x-3 justify-center items-center">
+                <AccountCard mainBalance={usdtBalance} logo={usdtLogo} currency="$"/>
+                <div className="card mb-3 col-span-2">
+                    <div className="grid grid-cols-2 grid-flow-row content-center auto-rows-min gap-x-6 gap-y-5 mt-8">
                         <span
-                            className="py-2 px-2.5 text-base font-bold rounded border bg-slate-600 border-slate-600 text-white">
+                            className="py-2 px-2.5 content-center text-center ms-6 text-base border font-bold rounded bg-slate-600 border-slate-600 text-white">
                             {'$ ' + totalBalanceUsd}</span>
-
+                        <button
+                            onClick={onSessionHistoryModalOpen}
+                            type="button"
+                            className="text-white me-6 btn text-base bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">
+                            История сессий
+                        </button>
                         <button
                             onClick={onTransferModalOpen}
                             type="button"
-                            className="px-2.5 py-2 ltr:pl-[calc(theme('spacing.2')_*_5.5)] rtl:pr-[calc(theme('spacing.2')_*_5.5)] text-base relative text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">
+                            className="px-2.5 py-2 ms-6 ltr:pl-[calc(theme('spacing.2')_*_5.5)] rtl:pr-[calc(theme('spacing.2')_*_5.5)] text-base relative text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">
                             <i className="ri-add-circle-line w-1/3 text-lg  bg-white/10 flex absolute ltr:-left-[1px] rtl:-right-[1px] -bottom-[1px] -top-[1px] items-center justify-center"></i>Перевод
                         </button>
                         <button
                             onClick={onOperationModalOpen}
                             type="button"
-                            className="text-white btn text-base bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">
+                            className="text-white me-6 btn text-base bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">
                             Другие операции
-                        </button>
-                        <button
-                            onClick={onSessionHistoryModalOpen}
-                            type="button"
-                            className="text-white btn text-base bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">
-                            История сессий
                         </button>
 
                     </div>

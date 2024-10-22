@@ -75,7 +75,8 @@ const Session = () => {
         POKERDOM: false,
         RED_STAR: false,
         BET_ONLINE: false,
-        GG: false
+        GG: false,
+        COIN_POKER: false
     });
     const [timeStartFilter, setTimeStartFilter] = useState( localStorage.getItem('timeStartFilter') ? JSON.parse(localStorage.getItem('timeStartFilter') as string) : new Date());
     const [timeEndFilter, setTimeEndFilter] = useState( localStorage.getItem('timeEndFilter') ? JSON.parse(localStorage.getItem('timeEndFilter') as string) : new Date());
@@ -377,6 +378,17 @@ const Session = () => {
                                                    onChange={handleRoomFilterChange}/>
                                             <label htmlFor="GG" className="align-middle">
                                                 GG
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="flex items-center gap-2 px-3 py-1.5">
+                                            <input id="COIN_POKER"
+                                                   className="size-4 border rounded-sm appearance-none cursor-pointer bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-slate-700 checked:border-slate-700 dark:checked:bg-zink-400 dark:checked:border-zink-400 checked:disabled:bg-zink-500 checked:disabled:border-zink-500"
+                                                   type="checkbox" checked={roomFilter.COIN_POKER}
+                                                   onChange={handleRoomFilterChange}/>
+                                            <label htmlFor="COIN_POKER" className="align-middle">
+                                                CoinPoker
                                             </label>
                                         </div>
                                     </li>
