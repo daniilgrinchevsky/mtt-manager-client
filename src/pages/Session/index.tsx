@@ -175,8 +175,8 @@ const Session = () => {
 
             tourneyRows.forEach((row) => {
                 let tourneyRow = {
-                    totalBuyIn: row.totalBuyIn,
-                    totalWinnings: row.totalWinnings,
+                    totalBuyIn: row.totalBuyIn ? row.totalBuyIn.replace(",", '.') : row.totalBuyIn,
+                    totalWinnings: row.totalWinnings ? row.totalWinnings.replace(",", '.') : row.totalWinnings,
                     entryCount: row.entryCount,
                     tourneyId: row.tourneyId,
                 }

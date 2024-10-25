@@ -53,7 +53,7 @@ const SessionStatModal = ({
         <React.Fragment>
             <Modal show={show} onHide={onHide} id="largeModal" modal-center="true"
                    className="fixed flex flex-col modal transition-all duration-300 ease-in-out left-2/4 z-drawer -translate-x-2/4 -translate-y-2/4"
-                   dialogClassName="w-auto bg-slate-100 shadow rounded-md dark:bg-zink-600 flex flex-col h-full">
+                   dialogClassName="w-max bg-slate-100 shadow rounded-md dark:bg-zink-600 flex flex-col h-full">
                 <Modal.Header
                     className="flex items-center justify-between p-3 border-b border-slate-200 dark:border-zink-500"
                     closeButtonClass="transition-all duration-200 ease-linear text-slate-500 hover:text-red-500 dark:text-zink-200 dark:hover:text-red-500">

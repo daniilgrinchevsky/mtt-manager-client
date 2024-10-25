@@ -113,6 +113,10 @@ const Analytics = () => {
 
     const [roomOptions, setRoomOptions] = useState([]);
     const [roomOption, setRoomOption] = useState<Enum | null> ({value: undefined, label:"Все румы"});
+
+    const [statPeriodOptions, setStatPeriodOptions] = useState([]);
+    const [statPeriodOption, setStatPeriodOption] = useState<Enum | null> ({value: undefined, label: ""});
+
     const [dateFrom, setDateFrom] = useState<Date | undefined>(undefined)
     const [dateTo, setDateTo] = useState<Date | undefined>(new Date())
 
@@ -186,6 +190,14 @@ const Analytics = () => {
             })
     }
 
+    const fetchStatPeriod = () => {
+        axios.get(`${process.env.REACT_APP_API_URL}enum/stat-period`)
+            .then(response => {
+                let statPeriodOptions = response.data
+                setStatPeriodOptions(statPeriodOptions)
+            })
+    }
+
     const fetchStats = () => {
         let filterRequest = {
             dateFrom: dateFrom,
@@ -207,7 +219,7 @@ const Analytics = () => {
     useEffect(() => {
         fetchBalance()
         fetchTableData()
-        fetchRooms()
+        fetchStatPeriod()
         fetchStats()
     }, [dateTo, dateFrom]);
 
@@ -236,12 +248,19 @@ const Analytics = () => {
                                     </Nav.Item>
                                 </Nav>
                                 <div className="flex col-span-4 place-self-end ">
+                                    {/*<Select*/}
+                                    {/*    className="w-full text-center me-2"*/}
+                                    {/*    placeholder="Все румы"*/}
+                                    {/*    options={roomOptions}*/}
+                                    {/*    value={roomOption}*/}
+                                    {/*    onChange={handleRoomChange}*/}
+                                    {/*/>*/}
                                     <Select
                                         className="w-full text-center me-2"
-                                        placeholder="Все румы"
-                                        options={roomOptions}
-                                        value={roomOption}
-                                        onChange={handleRoomChange}
+                                        placeholder="Период"
+                                        options={statPeriodOptions}
+                                        value={statPeriodOption}
+                                        // onChange={handleRoomChange}
                                     />
                                     <Flatpickr
                                         options={{
